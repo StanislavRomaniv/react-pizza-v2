@@ -1,0 +1,41 @@
+[
+    {
+     "id": 0,
+     "src": "https://dodopizza-a.akamaihd.net/static/Img/Products/d9c609f1422247f2b87b6293eb461ff0_292x292.webp",
+     "name": "Cheezeburger-pizza",
+     "types": [
+      "slim",
+      "traditional"
+     ],
+     "sizes": [
+      26,
+      30,
+      40
+     ],
+     "price": 395
+    },
+    {
+     "id": 1,
+     "src": "https://dodopizza-a.akamaihd.net/static/Img/Products/cea570842b754c52b786c231c65bd2e2_292x292.webp",
+     "name": "Cheeze-pizza",
+     "types": [
+      "slim"
+     ],
+     "sizes": [
+      26
+     ],
+     "price": 450
+    },
+    {
+     "id": 2,
+     "src": "https://dodopizza-a.akamaihd.net/static/Img/Products/27c9bbd0af3a4d1d84a086d9c2f1656d_292x292.webp",
+     "name": "Asian-pizza",
+     "types": [
+      "slim"
+     ],
+     "sizes": [
+      30
+     ],
+     "price": 290
+    }
+]

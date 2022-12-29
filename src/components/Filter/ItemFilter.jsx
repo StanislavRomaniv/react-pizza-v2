@@ -1,19 +1,20 @@
-import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { setFilterCategory } from '../../redux/slices/filterSlice';
+
 import './styles.scss';
 
-const ItemFilter = (props) => {
-    const filterList = ["All", "Meat", "Vegeterian", "Grilled", "Spicy", "Closed"]
-    const [active, setActive] = useState("All");
+const filterList = ["All", "Meat", "Vegeterian", "Grilled", "Spicy", "Closed"];
 
-    const clickHandler = (item) => {
-        setActive(item);
-    };
+const ItemFilter = () => {
+    const dispatch = useDispatch();
+    const category = useSelector(state => state.filter.category);
 
     return (
         <div className="itemFilter">
             {
-                filterList.map(item => (
-                    <button key={item} className={`itemFilter__btn ${active === item ? "active" : ""}`} onClick={() => clickHandler(item)}>{item}</button>
+                filterList.map((item, i) => (
+                    <button key={item} className={`itemFilter__btn ${category === i ? "active" : ""}`} onClick={() => dispatch(setFilterCategory(i))}>{item}</button>
                 ))
             }
         </div>

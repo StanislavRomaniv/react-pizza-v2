@@ -1,16 +1,18 @@
 import { useState } from 'react';
 
+const typeList = ["slim", "traditional"];
+const sizeList = [26, 30, 40];
+
 const Card = ({props}) => {
-    const typeList = ["slim", "traditional"];
-    const sizeList = [26, 30, 40];
     const {src, name, types, sizes, price} = props;
     const [isActiveType, setIsActiveType] = useState(0);
     const [isActiveSize, setIsActiveSize] = useState(0);
     const [count, setCount] = useState(0);
 
     return (
-        <div className="card">
-            <img src={`/images/database/${src}`} alt={name} className="card__img" />
+        <div className="card__wrapper">
+            <div className="card">
+            <img src={`${src}`} alt={name} className="card__img" />
             <h4 className="card__name">{name}</h4>
             <div className="card__block"> 
                 <div className="card__block-items">
@@ -63,6 +65,7 @@ const Card = ({props}) => {
                     {count ? <span className="card__button-add-count">{count}</span> : ""}
                 </div>
             </div>
+        </div>
         </div>
     );
 }

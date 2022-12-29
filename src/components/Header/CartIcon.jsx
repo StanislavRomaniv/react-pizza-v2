@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CartIcon = (props) => {
+const CartIcon = () => {
     return (
         <div className="cartIcon">
             <div className="cartIcon__sum">520 UAH</div>

@@ -4,7 +4,7 @@ const CartItem = ({src, name, type, size, count, totalPrice}) => {
     return (
         <div className="cartItem">
             <div className="cartItem__block">
-                <img src={`/images/database/${src}`} alt={name}/>
+                <img src={`${src}`} alt={name}/>
                 <div className="cartItem__header">
                     <h5 className="cartItem__header-name">{name}</h5>
                     <p className="cartItem__header-text">{type} crust, {size} cm.</p>
@@ -24,8 +24,8 @@ const CartItem = ({src, name, type, size, count, totalPrice}) => {
                         </svg>
                     </span>
                 </div>
-                <span className="cartItem__price">{totalPrice} UAH</span>
-                <span className="cartItem__button-remove">
+                <span className="cartItem__price grid__item">{totalPrice} UAH</span>
+                <span className="cartItem__button-remove grid__item">
                     <svg width="12" height="12" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8.74791 6.95572L6.49931 4.70712L8.74791 2.45852C9.16184 2.04459 9.16184 1.37338 8.74791 0.959454C8.33398 0.545525 7.66277 0.545525 7.24884 0.959454L5.00024 3.20805L2.75164 0.959454C2.33771 0.545525 1.66651 0.545525 1.25258 0.959454C0.838648 1.37338 0.838648 2.04459 1.25258 2.45852L3.50118 4.70712L1.25258 6.95572C0.838649 7.36965 0.838649 8.04086 1.25258 8.45479C1.66651 8.86872 2.33772 8.86872 2.75164 8.45479L5.00024 6.20619L7.24884 8.45479C7.66277 8.86872 8.33398 8.86872 8.74791 8.45479C9.16184 8.04086 9.16184 7.36965 8.74791 6.95572Z" fill="#B6B6B6"/>
                     </svg>

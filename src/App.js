@@ -1,25 +1,34 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.scss';
+import { useState, createContext } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
+import { store } from './redux/store';
+
+import Home from './pages/Home';
+import CartPage from './pages/CartPage';
+import NotFoundPage from './pages/NotFoundPage';
 import Header from './components/Header/index';
-import Filter from './components/Filter/index';
-import Content from './components/Content/index';
-import Cart from './components/Cart/Cart';
+import './App.scss';
+
+export const SearchContext = createContext(null);
 
 const App = () => {
+  const [searchText, setSearchText] = useState("");
+
   return (
     <BrowserRouter>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Header />
-              <Filter />
-              <Content />
-            </>} 
-          />
-          <Route path="cart" element={<Cart />} />
-        </Routes>
-      </div>
+      <Provider store={store}>
+        <div className="App">
+          <SearchContext.Provider value={{searchText, setSearchText}}>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="cart" element={<CartPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </SearchContext.Provider>
+        </div>
+      </Provider>
     </BrowserRouter>
   );
 }

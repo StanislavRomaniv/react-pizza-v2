@@ -4,6 +4,20 @@
     align-items: center;
     min-height: 136px;
     border-bottom: 1px solid #F6F6F6;
+
+    @media(max-width: 540px) {
+        .cartIcon__sum {
+            display: none;
+
+            &:last-child {
+                display: flex;
+            }
+        }
+
+        .cartIcon__divider {
+            display: none;
+        }
+    }
 }
 
 .logo{
@@ -23,12 +37,31 @@
             margin: 0;
             font-size: 24px;
             font-weight: 800;
+            @media(max-width: 440px) {
+                font-size: 20px;
+            }
         }
         &-bottom{
             margin: 0;
             font-size: 16px;
             font-weight: 400;
             color: #7B7B7B;
+            
+            &-media {
+                display: none;
+                margin: 0;
+                font-size: 15px;
+                font-weight: 400;
+                color: #7B7B7B;
+                @media(max-width: 440px) {
+                    display: block;
+                    text-align-last: left;
+                }
+            }
+
+            @media(max-width: 440px) {
+                display: none;
+            }
         }
     }
 }
@@ -43,7 +76,12 @@
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
+    transition: all 0.3s;
 
+    &:hover {
+        transform: scale(1.05);
+        transition: all 0.3s;
+    }
 
     &__divider{
         height: 25px;
@@ -61,5 +99,51 @@
     &__icon{
         display: block;
         margin: 0 5px 3px 0;
+    }
+
+    @media(max-width: 440px) {
+        padding: 10px 15px;
+    }
+}
+
+.search {
+    position: relative;
+    left: -60px;
+
+    &__input {
+        width: 300px;
+        // height: 34px;
+        outline: none;
+        padding: 12px 22px 12px 40px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 24px;
+        height: 24px;
+        opacity: 0.5;
+    }
+
+    &__close {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 30px;
+        height: 30px;
+        opacity: 0.5;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        
+        &:hover {
+            opacity: 0.9;
+            height: 34px;
+            top: 4px;
+            right: 4px;
+            width: 34px;
+        }
     }
 }
