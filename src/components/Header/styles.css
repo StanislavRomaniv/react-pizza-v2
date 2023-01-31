@@ -1,0 +1,141 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 136px;
+  border-bottom: 1px solid #F6F6F6;
+}
+@media (max-width: 540px) {
+  .header .cartIcon__sum {
+    display: none;
+  }
+  .header .cartIcon__sum:last-child {
+    display: flex;
+  }
+  .header .cartIcon__divider {
+    display: none;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.logo__img {
+  width: 38px;
+  height: 38px;
+}
+.logo__title {
+  padding: 15px;
+  text-align: left;
+}
+.logo__title-top {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+}
+@media (max-width: 440px) {
+  .logo__title-top {
+    font-size: 20px;
+  }
+}
+.logo__title-bottom {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #7B7B7B;
+}
+.logo__title-bottom-media {
+  display: none;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  color: #7B7B7B;
+}
+@media (max-width: 440px) {
+  .logo__title-bottom-media {
+    display: block;
+    -moz-text-align-last: left;
+         text-align-last: left;
+  }
+}
+@media (max-width: 440px) {
+  .logo__title-bottom {
+    display: none;
+  }
+}
+
+.cartIcon {
+  display: flex;
+  align-items: center;
+  background-color: #FE5F1E;
+  padding: 15px 25px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.cartIcon:hover {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+.cartIcon__divider {
+  height: 25px;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.25);
+  margin: 0 13px;
+}
+.cartIcon__sum {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cartIcon__icon {
+  display: block;
+  margin: 0 5px 3px 0;
+}
+@media (max-width: 440px) {
+  .cartIcon {
+    padding: 10px 15px;
+  }
+}
+
+.search {
+  position: relative;
+  left: -60px;
+}
+.search__input {
+  width: 300px;
+  outline: none;
+  padding: 12px 22px 12px 40px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.search__icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.5;
+}
+.search__close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+.search__close:hover {
+  opacity: 0.9;
+  height: 34px;
+  top: 4px;
+  right: 4px;
+  width: 34px;
+}/*# sourceMappingURL=styles.css.map */

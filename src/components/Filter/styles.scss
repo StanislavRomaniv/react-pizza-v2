@@ -90,7 +90,6 @@
     margin-left: 20px;
 
     &__btn {
-        cursor: pointer;
         color: #FE5F1E;
         border-bottom: 1px dotted #FE5F1E;
     }
@@ -109,6 +108,7 @@
         display: flex;
         font-size: 14px;
         font-weight: 700;
+        cursor: pointer;
 
         &::before {
             content: "";
