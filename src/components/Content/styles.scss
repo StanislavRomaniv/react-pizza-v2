@@ -8,8 +8,25 @@
         font-weight: 700;
     }
 
-    @media(max-width: 580px) {
+    @media (max-width: 580px) {
         text-align: center;
+    }
+}
+
+.flex {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    margin: 70px 0;
+    width: 42vw;
+
+    &__img {
+        width: 350px;
+    }
+
+    &__block {
+        width: 280px;
     }
 }
 
@@ -21,8 +38,9 @@
     &__wrapper {
         display: flex;
         justify-content: center;
+        z-index: 1;
     }
-    
+
     &__name {
         font-size: 20px;
         font-weight: 700;
@@ -30,19 +48,20 @@
     }
 
     &__img {
-        max-width: 280px; 
+        max-width: 280px;
     }
 
     &__block {
-        background-color: #F3F3F3;
+        background-color: #f3f3f3;
         border-radius: 10px;
         padding: 7px;
+        z-index: 10;
 
         &-items {
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-            &:first-child{
+            &:first-child {
                 padding-bottom: 7px;
             }
         }
@@ -53,6 +72,7 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 17px;
+        z-index: 10;
         &-text {
             font-size: 18px;
             font-weight: 700;
@@ -82,8 +102,8 @@
         }
 
         &-add {
-            color: #EB5A1E;
-            border: 1px solid #EB5A1E;
+            color: #eb5a1e;
+            border: 1px solid #eb5a1e;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -104,7 +124,7 @@
                 width: 17px;
                 height: 17px;
                 margin: 0 0 0 5px;
-                background-color: #EB5A1E;
+                background-color: #eb5a1e;
                 padding: 5px;
                 font-size: 13px;
                 line-height: 18px;
@@ -117,24 +137,24 @@
 
             &:hover {
                 color: #fff;
-                background-color: #EB5A1E;
+                background-color: #eb5a1e;
 
                 svg {
                     path {
-                      fill: #fff;
+                        fill: #fff;
                     }
                 }
 
                 .card__button-add-count {
                     background-color: #fff;
-                    color: #EB5A1E;
+                    color: #eb5a1e;
                 }
             }
         }
 
         &-disabled {
             cursor: default;
-            color: #2c2c2c50
+            color: #2c2c2c50;
         }
 
         &-active {
@@ -150,15 +170,15 @@
     grid-template-rows: repeat(1, 1fr);
     grid-column-gap: 20px;
 
-    @media(max-width: 1400px) {
+    @media (max-width: 1400px) {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    @media(max-width: 1000px) {
+    @media (max-width: 1000px) {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    @media(max-width: 690px) {
+    @media (max-width: 690px) {
         grid-template-columns: repeat(1, 1fr);
     }
 }
