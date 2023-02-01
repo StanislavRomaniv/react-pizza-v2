@@ -1,6 +1,6 @@
 ## Click the link to see the demo: [react-pizza-v2](https://react-pizza-stasrom.herokuapp.com/)
 
-#Getting Started with Create React App
+Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
