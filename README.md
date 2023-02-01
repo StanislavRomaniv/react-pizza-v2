@@ -69,5 +69,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 =======
-# react-pizza-v2
->>>>>>> fd7e72699bb7e723003e58f05c9ed748c84bf08b
