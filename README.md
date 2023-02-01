@@ -1,4 +1,4 @@
-Click the link to see the demo: # [react-pizza-v2](https://react-pizza-stasrom.herokuapp.com/)
+# Click the link to see the demo: [react-pizza-v2](https://react-pizza-stasrom.herokuapp.com/)
 
 # Getting Started with Create React App
 
