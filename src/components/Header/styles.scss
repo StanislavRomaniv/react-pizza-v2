@@ -1,11 +1,17 @@
-.header{
-    display: flex;
+.header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 'logo search cart';
+    column-gap: 0;
+    row-gap: 0;
+    justify-items: center;
     justify-content: space-between;
     align-items: center;
-    min-height: 136px;
-    border-bottom: 1px solid #F6F6F6;
+    // min-height: 136px;
+    padding: 20px 0;
+    border-bottom: 1px solid #f6f6f6;
 
-    @media(max-width: 540px) {
+    @media (max-width: 540px) {
         .cartIcon__sum {
             display: none;
 
@@ -20,56 +26,58 @@
     }
 }
 
-.logo{
+.logo {
+    grid-area: logo;
     display: flex;
     align-items: center;
     cursor: pointer;
 
-    &__img{
+    &__img {
         width: 38px;
         height: 38px;
     }
 
-    &__title{
-        padding: 15px;
+    &__title {
+        padding: 15px 0 15px 15px;
         text-align: left;
-        &-top{
+        &-top {
             margin: 0;
             font-size: 24px;
             font-weight: 800;
-            @media(max-width: 440px) {
+            @media (max-width: 440px) {
                 font-size: 20px;
             }
         }
-        &-bottom{
+        &-bottom {
             margin: 0;
             font-size: 16px;
             font-weight: 400;
-            color: #7B7B7B;
-            
+            color: #7b7b7b;
+
             &-media {
                 display: none;
                 margin: 0;
                 font-size: 15px;
                 font-weight: 400;
-                color: #7B7B7B;
-                @media(max-width: 440px) {
+                color: #7b7b7b;
+                @media (max-width: 440px) {
                     display: block;
                     text-align-last: left;
                 }
             }
 
-            @media(max-width: 440px) {
+            @media (max-width: 440px) {
                 display: none;
             }
         }
     }
 }
 
-.cartIcon{
+.cartIcon {
+    grid-area: cart;
     display: flex;
     align-items: center;
-    background-color: #FE5F1E;
+    background-color: #fe5f1e;
     padding: 15px 25px;
     border-radius: 30px;
     color: #fff;
@@ -77,41 +85,44 @@
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s;
+    width: fit-content;
 
     &:hover {
         transform: scale(1.05);
         transition: all 0.3s;
     }
 
-    &__divider{
+    &__divider {
         height: 25px;
         width: 1px;
         background-color: rgba(255, 255, 255, 0.25);
         margin: 0 13px;
     }
 
-    &__sum{
+    &__sum {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-    &__icon{
+    &__icon {
         display: block;
         margin: 0 5px 3px 0;
     }
 
-    @media(max-width: 440px) {
+    @media (max-width: 440px) {
         padding: 10px 15px;
     }
 }
 
 .search {
+    grid-area: search;
     position: relative;
-    left: -60px;
+    // left: -60px;
 
     &__input {
-        width: 300px;
+        max-width: 400px;
+        width: 25vw;
         // height: 34px;
         outline: none;
         padding: 12px 22px 12px 40px;
@@ -137,7 +148,7 @@
         opacity: 0.5;
         cursor: pointer;
         transition: all 0.2s ease-out;
-        
+
         &:hover {
             opacity: 0.9;
             height: 34px;
@@ -145,5 +156,61 @@
             right: 4px;
             width: 34px;
         }
+    }
+}
+
+@media (max-width: 960px) {
+    .header {
+        grid-template-columns: 2fr 3fr 2fr;
+    }
+
+    .search {
+        &__input {
+            width: 20vw;
+        }
+    }
+}
+
+@media (max-width: 860px) {
+    .header {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 25%;
+        row-gap: 20px;
+        grid-template-areas:
+            'logo cart'
+            'search search';
+        justify-content: space-between;
+    }
+
+    .search {
+        &__input {
+            width: 50vw;
+        }
+    }
+}
+
+@media (max-width: 680px) {
+    .header {
+        grid-template-columns: 3fr 2fr;
+        column-gap: 15%;
+    }
+}
+
+@media (max-width: 615px) {
+    .header {
+        column-gap: 0%;
+    }
+}
+
+@media (max-width: 540px) {
+    .header {
+        grid-template-columns: 4fr 2fr;
+        column-gap: 0%;
+    }
+}
+
+@media (max-width: 440px) {
+    .header {
+        row-gap: 40px;
     }
 }
