@@ -22,8 +22,6 @@ const cartSlice = createSlice({
 
             state.totalCount += 1;
             state.totalPrice += payload.price;
-
-            console.log('add', current(state.items));
         },
 
         removeItemInCart(state, { payload }) {
