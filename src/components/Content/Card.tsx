@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addItemToCart } from '../../redux/slices/cartSlice';
+import { CartPropsType } from '../Cart/Cart';
 
 interface Prop {
     id: string;
@@ -38,7 +39,7 @@ const Card: FC<CardPropsType> = ({ props, component }) => {
     const count = item ? item.count : 0;
 
     const addItemClick = () => {
-        dispatch(addItemToCart({ id: `${id}-${isActiveType}-${isActiveSize}`, src, name, type: isActiveType, size: isActiveSize, price }));
+        dispatch(addItemToCart({ id: `${id}-${isActiveType}-${isActiveSize}`, src, name, type: isActiveType, size: String(isActiveSize), price } as CartPropsType));
     };
 
     useEffect(() => {

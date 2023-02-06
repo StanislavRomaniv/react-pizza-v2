@@ -8,5 +8,7 @@ export const store = configureStore({
         filter: filterReducer,
         content: contentReducer,
         cart: cartReducer,
-    }
+    },
 });
+
+export type RootState = ReturnType<typeof store.getState>;
