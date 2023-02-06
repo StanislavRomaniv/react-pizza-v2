@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { filterSelector } from '../../redux/slices/filterSlice';
 
@@ -14,7 +14,7 @@ export const sortList = [
     { name: 'by alphabet (ASC)', sort: 'name' },
 ];
 
-const Sort = () => {
+const Sort: FC = () => {
     const [visible, setVisible] = useState(false);
     const { sortType } = useSelector(filterSelector);
 

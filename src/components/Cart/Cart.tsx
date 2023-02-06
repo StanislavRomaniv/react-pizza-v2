@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -8,7 +8,18 @@ import smile from '../../assets/images/sad_face.png';
 import { clearCart, cartSelector } from '../../redux/slices/cartSlice';
 import './styles.scss';
 
-const Cart = () => {
+type CartPropsType = {
+    id: string;
+    src: string;
+    name: string;
+    type: string;
+    size: string;
+    count: number;
+    price: number;
+    totalItemPrice: number;
+};
+
+const Cart: FC = () => {
     const dispatch = useDispatch();
     const { items, totalPrice, totalCount } = useSelector(cartSelector);
 
@@ -64,7 +75,7 @@ const Cart = () => {
                         </button>
                     </div>
                     <div className="cart__list">
-                        {items.map((item, i) => {
+                        {items.map((item: CartPropsType) => {
                             const { id, src, name, type, size, count, price, totalItemPrice } = item;
 
                             return <CartItem key={id} id={id} src={src} name={name} type={type} size={size} count={count} price={price} totalItemPrice={totalItemPrice} />;

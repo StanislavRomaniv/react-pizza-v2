@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { setFilterCategory, setCurrentPage, filterSelector } from '../../redux/slices/filterSlice';
@@ -6,11 +7,11 @@ import './styles.scss';
 
 const filterList = ['All', 'Meat', 'Vegeterian', 'Grilled', 'Spicy', 'Closed'];
 
-const ItemFilter = () => {
+const ItemFilter: FC = () => {
     const dispatch = useDispatch();
     const { category } = useSelector(filterSelector);
 
-    const clickHandler = (i) => {
+    const clickHandler = (i: number) => {
         dispatch(setFilterCategory(i));
         dispatch(setCurrentPage(1));
     };
