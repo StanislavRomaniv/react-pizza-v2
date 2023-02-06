@@ -8,7 +8,7 @@ import smile from '../../assets/images/sad_face.png';
 import { clearCart, cartSelector } from '../../redux/slices/cartSlice';
 import './styles.scss';
 
-type CartPropsType = {
+export type CartPropsType = {
     id: string;
     src: string;
     name: string;

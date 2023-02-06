@@ -15,7 +15,7 @@ import FaultComponent from '../components/FaultComponent/FaultComponent';
 import Pagination from '../components/Pagination/Pagination';
 import '../components/Content/styles.scss';
 
-type ItemType = {
+export type ItemType = {
     id: string;
     src: string;
     name: string;
@@ -36,9 +36,13 @@ const Home: FC = () => {
     useEffect(() => {
         if (window.location.search) {
             const params = qs.parse(window.location.search, { ignoreQueryPrefix: true });
-            const sortObj = sortList.find((el) => el.sort === params.sortType);
+            const sortType = sortList.find((el) => el.sort === params.sortType);
 
-            dispatch(setFilters({ ...params, sortObj }));
+            console.log(params);
+
+            if (sortType) {
+                dispatch(setFilters({ currentPage: Number(params.currentPage), category: Number(params.category), sortType, searchText: '' }));
+            }
         }
     }, [dispatch]);
 
