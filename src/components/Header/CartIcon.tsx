@@ -1,8 +1,8 @@
-import React from 'react';
+import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { cartSelector } from '../../redux/slices/cartSlice';
 
-const CartIcon = () => {
+const CartIcon: FC = () => {
     const { totalCount, totalPrice } = useSelector(cartSelector);
 
     return (

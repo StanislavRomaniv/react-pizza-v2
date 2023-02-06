@@ -1,11 +1,11 @@
-import React from 'react';
+import { FC } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import CartIcon from './CartIcon';
 import Logo from './Logo';
 import Search from './Search';
 
-const Header = () => {
+const Header: FC = () => {
     const location = useLocation();
 
     return (

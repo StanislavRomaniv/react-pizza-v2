@@ -1,16 +1,39 @@
-import { useState, useEffect } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addItemToCart } from '../../redux/slices/cartSlice';
 
-const Card = ({ props, component }) => {
+interface Prop {
+    id: string;
+    src: string;
+    name: string;
+    types: string[];
+    sizes: number[];
+    price: number;
+}
+
+type CardPropsType = {
+    props: Prop;
+    component: string;
+};
+
+type ItemType = {
+    id: string;
+    src: string;
+    name: string;
+    type: string;
+    size: number;
+    price: number;
+};
+
+const Card: FC<CardPropsType> = ({ props, component }) => {
     const dispatch = useDispatch();
 
     const { id, src, name, types, sizes, price } = props;
-    const [isActiveType, setIsActiveType] = useState();
-    const [isActiveSize, setIsActiveSize] = useState();
-    const item = useSelector((state) => state.cart.items.find((obj) => obj.id.match(/\d+/g)[0] === id && obj.type === isActiveType && obj.size === isActiveSize));
+    const [isActiveType, setIsActiveType] = useState<string>();
+    const [isActiveSize, setIsActiveSize] = useState<number>();
+    const item = useSelector((state: any) => state.cart.items.find((obj: ItemType) => obj.id.match(/\d+/g)![0] === id && obj.type === isActiveType && obj.size === isActiveSize));
 
     const count = item ? item.count : 0;
 

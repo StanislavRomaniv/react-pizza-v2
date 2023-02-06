@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import qs from 'qs';
@@ -8,14 +8,23 @@ import { filterSelector, setFilters } from '../redux/slices/filterSlice';
 import { sortList } from '../components/Filter/Sort';
 
 import Card from '../components/Content/Card';
-import Filter from '../components/Filter';
+import Filter from '../components/Filter/Filter';
 import Skeleton from '../components/Content/Skeleton';
 import NoItems from '../components/Content/NoItems';
 import FaultComponent from '../components/FaultComponent/FaultComponent';
-import Pagination from '../components/Pagination';
+import Pagination from '../components/Pagination/Pagination';
 import '../components/Content/styles.scss';
 
-const Home = () => {
+type ItemType = {
+    id: string;
+    src: string;
+    name: string;
+    types: string[];
+    sizes: number[];
+    price: number;
+};
+
+const Home: FC = () => {
     const isMounted = useRef(false);
 
     const dispatch = useDispatch();
@@ -53,6 +62,7 @@ const Home = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
 
+        // @ts-ignore
         dispatch(fetchContent({ sortType, category, searchText, currentPage }));
     }, [sortType, category, searchText, currentPage, dispatch]);
 
@@ -69,7 +79,7 @@ const Home = () => {
                     searchText && !items.length ? (
                         <NoItems />
                     ) : (
-                        items.map((item) => item.name.toLowerCase().includes(searchText.toLowerCase()) && <Card props={item} key={item.name} />)
+                        items.map((item: ItemType) => item.name.toLowerCase().includes(searchText.toLowerCase()) && <Card props={item} key={item.name} component={'card'} />)
                     )
                 ) : (
                     <FaultComponent />
