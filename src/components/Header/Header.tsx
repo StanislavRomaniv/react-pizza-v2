@@ -1,5 +1,7 @@
-import { FC } from 'react';
+import { FC, useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
+import { cartSelector } from '../../redux/slices/cartSlice';
 
 import CartIcon from './CartIcon';
 import Logo from './Logo';
@@ -7,6 +9,18 @@ import Search from './Search';
 
 const Header: FC = () => {
     const location = useLocation();
+    const { items } = useSelector(cartSelector);
+    const isMounted = useRef(false);
+
+    useEffect(() => {
+        if (isMounted.current) {
+            const data = JSON.stringify(items);
+            console.log(data);
+            localStorage.setItem('cart', data);
+        }
+
+        isMounted.current = true;
+    }, [items]);
 
     return (
         <div className="header">
