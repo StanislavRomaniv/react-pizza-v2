@@ -11,7 +11,7 @@
         justify-content: space-between;
         align-items: center;
         margin: 0 0 30px 0;
-        
+
         &-text {
             svg {
                 width: 29px;
@@ -32,7 +32,7 @@
         font-size: 22px;
         &-price {
             b {
-                color: #FE5F1E;
+                color: #fe5f1e;
             }
         }
 
@@ -48,7 +48,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: #B6B6B6;
+        color: #b6b6b6;
         border: none;
         font-size: 16px;
         border-radius: 30px;
@@ -129,7 +129,7 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     padding: 30px 0;
-    border-bottom: 1px solid #F4F4F4;
+    border-bottom: 1px solid #f4f4f4;
 
     @media (max-width: 600px) {
         grid-template-columns: repeat(1, 1fr);
@@ -140,7 +140,7 @@
     }
 
     &:first-child {
-        border-top: 1px solid #F4F4F4;
+        border-top: 1px solid #f4f4f4;
     }
 
     img {
@@ -163,7 +163,7 @@
                     max-width: 120px;
                     text-align: right;
                 }
-                
+
                 .cartItem__button-remove {
                     display: none;
                 }
@@ -191,7 +191,7 @@
             // max-width: 150px;
         }
         &-text {
-            color: #8D8D8D;
+            color: #8d8d8d;
             font-size: 18px;
             margin: 0;
         }
@@ -213,12 +213,32 @@
             display: block;
             width: 32px;
             height: 32px;
-            color: #FE5F1E;
+            color: #fe5f1e;
+            background-color: #fff;
             border-radius: 50%;
-            border: 2px solid #FE5F1E;
+            border: 2px solid #fe5f1e;
             display: flex;
             align-items: center;
             justify-content: center;
+
+            &:active {
+                transform: scale(0.95);
+            }
+
+            &:disabled {
+                color: #b6b6b6;
+                border: 2px solid #b6b6b6;
+
+                &:active {
+                    transform: none;
+                }
+
+                svg {
+                    path {
+                        fill: #b6b6b6;
+                    }
+                }
+            }
         }
 
         &-count {
@@ -230,7 +250,7 @@
             cursor: pointer;
             display: block;
             background-color: #fff;
-            border: 2px solid #B6B6B6;
+            border: 2px solid #b6b6b6;
             border-radius: 50%;
             width: 32px;
             height: 32px;
@@ -242,9 +262,9 @@
 }
 
 .stroked {
-    border: 1px solid #B6B6B6;
-    i{
-        border: 1px solid #B6B6B6;
+    border: 1px solid #b6b6b6;
+    i {
+        border: 1px solid #b6b6b6;
         border-width: 0 2px 2px 0;
         display: inline-block;
         padding: 3px;
@@ -258,8 +278,8 @@
 
 .pay {
     color: #fff;
-    background-color: #FE5F1E;
-    border: 1px solid #FE5F1E;
+    background-color: #fe5f1e;
+    border: 1px solid #fe5f1e;
     font-weight: 700;
 
     @media (max-width: 450px) {

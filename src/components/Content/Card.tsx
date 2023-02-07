@@ -2,6 +2,7 @@ import { FC, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { RootState } from '../../redux/store';
 import { addItemToCart } from '../../redux/slices/cartSlice';
 import { CartPropsType } from '../Cart/Cart';
 
@@ -34,7 +35,7 @@ const Card: FC<CardPropsType> = ({ props, component }) => {
     const { id, src, name, types, sizes, price } = props;
     const [isActiveType, setIsActiveType] = useState<string>();
     const [isActiveSize, setIsActiveSize] = useState<number>();
-    const item = useSelector((state: any) => state.cart.items.find((obj: ItemType) => obj.id.match(/\d+/g)![0] === id && obj.type === isActiveType && obj.size === isActiveSize));
+    const item = useSelector((state: RootState) => state.cart.items.find((obj: CartPropsType) => obj.id.match(/\d+/g)![0] === id && obj.type === isActiveType && obj.size === String(isActiveSize)));
 
     const count = item ? item.count : 0;
 
