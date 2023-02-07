@@ -1,20 +1,23 @@
-import { FC } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { FC, useCallback, memo } from 'react';
+import { useDispatch } from 'react-redux';
 
-import { setFilterCategory, setCurrentPage, filterSelector } from '../../redux/slices/filterSlice';
+import { setFilterCategory, setCurrentPage } from '../../redux/slices/filterSlice';
 
 import './styles.scss';
 
-const filterList = ['All', 'Meat', 'Vegeterian', 'Grilled', 'Spicy', 'Closed'];
+interface ItemFilterPropsType {
+    category: number;
+}
 
-const ItemFilter: FC = () => {
+const filterList: string[] = ['All', 'Meat', 'Vegeterian', 'Grilled', 'Spicy', 'Closed'];
+
+const ItemFilter: FC<ItemFilterPropsType> = memo(({ category }) => {
     const dispatch = useDispatch();
-    const { category } = useSelector(filterSelector);
 
-    const clickHandler = (i: number) => {
+    const clickHandler = useCallback((i: number) => {
         dispatch(setFilterCategory(i));
         dispatch(setCurrentPage(1));
-    };
+    }, []);
 
     return (
         <div className="itemFilter">
@@ -25,6 +28,6 @@ const ItemFilter: FC = () => {
             ))}
         </div>
     );
-};
+});
 
 export default ItemFilter;

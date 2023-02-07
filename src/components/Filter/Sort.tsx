@@ -1,9 +1,12 @@
-import { FC, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { filterSelector } from '../../redux/slices/filterSlice';
+import { FC, useState, memo } from 'react';
+import { SortType } from '../../redux/slices/filterSlice';
 
 import SortList from './SortList';
 import './styles.scss';
+
+interface SortPropsType {
+    sortType: SortType;
+}
 
 export const sortList = [
     { name: 'popularity (DESC)', sort: '-rating' },
@@ -14,9 +17,8 @@ export const sortList = [
     { name: 'by alphabet (ASC)', sort: 'name' },
 ];
 
-const Sort: FC = () => {
+const Sort: FC<SortPropsType> = memo(({ sortType }) => {
     const [visible, setVisible] = useState(false);
-    const { sortType } = useSelector(filterSelector);
 
     return (
         <>
@@ -32,6 +34,6 @@ const Sort: FC = () => {
             {visible ? <div className="sort__mask" onClick={() => setVisible((prev) => (prev ? false : true))}></div> : ''}
         </>
     );
-};
+});
 
 export default Sort;
