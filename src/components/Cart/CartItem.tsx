@@ -11,8 +11,6 @@ const CartItem: FC<CartPropsType> = ({ id, src, name, type, size, count, price, 
         window.confirm('Do you really want to remove this pizza?') && dispatch(clearItem({ id, src, name, type, size, price } as CartPropsType));
     };
 
-    console.log(count);
-
     return (
         <div className="cartItem">
             <div className="cartItem__block">

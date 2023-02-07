@@ -20,15 +20,6 @@ type CardPropsType = {
     component: string;
 };
 
-type ItemType = {
-    id: string;
-    src: string;
-    name: string;
-    type: string;
-    size: number;
-    price: number;
-};
-
 const Card: FC<CardPropsType> = ({ props, component }) => {
     const dispatch = useDispatch();
 
