@@ -2,7 +2,8 @@ import { FC } from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Card from '../components/Content/Card';
+
+import { Card, Spinner } from '../components';
 
 type ItemPageRouteParams = {
     id: string;
@@ -30,7 +31,7 @@ const ItemPage: FC = () => {
     }, [id, navigate]);
 
     if (!item) {
-        return <>Download...</>;
+        return <Spinner />;
     }
 
     return <Card props={item} component={'page'} />;

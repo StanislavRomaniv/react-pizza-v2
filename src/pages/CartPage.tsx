@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Cart from '../components/Cart/Cart';
+import { Cart } from '../components';
 
 const CartPage: FC = () => <Cart />;
 

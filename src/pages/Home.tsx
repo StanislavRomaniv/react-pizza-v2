@@ -8,13 +8,8 @@ import { filterSelector, setFilters } from '../redux/slices/filterSlice';
 import Sort, { sortList } from '../components/Filter/Sort';
 import { useAppDispatch } from '../redux/store';
 
-import Card from '../components/Content/Card';
-import Skeleton from '../components/Content/Skeleton';
-import NoItems from '../components/Content/NoItems';
-import FaultComponent from '../components/FaultComponent/FaultComponent';
-import Pagination from '../components/Pagination/Pagination';
+import { Card, Skeleton, NoItems, FaultComponent, Pagination, ItemFilter } from '../components';
 import '../components/Content/styles.scss';
-import ItemFilter from '../components/Filter/ItemFilter';
 
 export type ItemType = {
     id: string;
